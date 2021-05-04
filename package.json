@@ -1,6 +1,6 @@
 {
-    "name": "yeffscript",
-    "displayName": "YeffScript",
+    "name": "neo",
+    "displayName": "Neo",
     "description": "",
     "version": "0.0.1",
     "engines": {
@@ -15,15 +15,15 @@
     "publisher": "Oseryx",
     "contributes": {
         "languages": [{
-            "id": "ys",
-            "aliases": ["YeffScript", "ys"],
+            "id": "neo",
+            "aliases": ["Neo"],
             "extensions": [".neo"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "ys",
-            "scopeName": "source.ys",
-            "path": "./syntaxes/ys.tmLanguage.json"
+            "language": "neo",
+            "scopeName": "source.neo",
+            "path": "./syntaxes/neo.tmLanguage.json"
         }]
     }
 }

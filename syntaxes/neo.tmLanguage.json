@@ -1,5 +1,5 @@
 {
-    "name": "YeffScript",
+    "name": "Neo",
     "patterns": [{
             "include": "#keywords"
         },
@@ -206,5 +206,5 @@
             "name": "comment.block"
         }
     },
-    "scopeName": "source.ys"
+    "scopeName": "source.neo"
 }
