@@ -12,6 +12,7 @@
     "categories": [
         "Programming Languages"
     ],
+    "publisher": "Oseryx",
     "contributes": {
         "languages": [{
             "id": "ys",
