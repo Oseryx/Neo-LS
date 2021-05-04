@@ -2,7 +2,7 @@
     "name": "neo",
     "displayName": "Neo",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -14,16 +14,24 @@
     ],
     "publisher": "Oseryx",
     "contributes": {
-        "languages": [{
-            "id": "neo",
-            "aliases": ["Neo"],
-            "extensions": [".neo"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "neo",
-            "scopeName": "source.neo",
-            "path": "./syntaxes/neo.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "neo",
+                "aliases": [
+                    "Neo"
+                ],
+                "extensions": [
+                    ".neo"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "neo",
+                "scopeName": "source.neo",
+                "path": "./syntaxes/neo.tmLanguage.json"
+            }
+        ]
     }
 }
