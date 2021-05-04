@@ -1,0 +1,210 @@
+{
+    "name": "YeffScript",
+    "patterns": [{
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#chars"
+        },
+        {
+            "include": "#digits"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#multiline-comments"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#class"
+        },
+        {
+            "include": "#inheritance"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#functionVars"
+        },
+        {
+            "include": "#varsAndProps"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.ys",
+                "match": "\\b(if|while|for|return)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.ys",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "constant.character.escape.ys",
+                "match": "\\\\."
+            }]
+        },
+        "chars": {
+            "name": "string.quoted.single.vivian",
+            "begin": "'",
+            "end": "'",
+            "patterns": [{
+                "match": "."
+            }]
+        },
+        "digits": {
+            "name": "constant.numeric.decimal.ys",
+            "match": "(\\b[0-9][0-9_]*(n)?\\b(?!\\.))|(\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*(n)?\\b)|(\\b[0-9][0-9_]*(\\.)(n)?\\B)|(\\B(\\.)[0-9][0-9_]*(n)?\\b)"
+        },
+        "operators": {
+            "patterns": [{
+                    "name": "keyword.operator.assignment.ys",
+                    "match": "(\\s*(<|\\+|\\-|\\||\\*|\\%|\\&|!|=|>)\\s*)"
+                },
+                {
+                    "name": "keyword.operator.assignment.ys",
+                    "match": "([^/*]|^|\\s+)?(\\/)(\\s+|[^*/]|$)"
+                }
+            ]
+        },
+        "variables": {
+            "begin": "\\b(var)\\s*\\b",
+            "end": "\\b(\\w*)\\b",
+            "beginCaptures": {
+                "0": {
+                    "patterns": [{
+                        "name": "keyword.control.ys",
+                        "match": "var"
+                    }]
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "patterns": [{
+                        "name": "variable.other.readwrite.ys",
+                        "match": "\\w*"
+                    }]
+                }
+            }
+        },
+        "varsAndProps": {
+            "patterns": [{
+                    "match": "(\\w)*\\(",
+                    "captures": {
+                        "0": {
+                            "patterns": [{
+                                "name": "entity.name.function.vivian",
+                                "match": "(\\w)*[^(]"
+                            }]
+                        }
+                    }
+                },
+                {
+                    "name": "variable.other.readwrite",
+                    "match": "(\\w)*[^\\W]"
+                }
+            ]
+        },
+        "functions": {
+            "begin": "\\b((func)\\s*)\\b",
+            "end": "\\b(\\w*)\\b",
+            "beginCaptures": {
+                "0": {
+                    "patterns": [{
+                        "name": "keyword.control.ys",
+                        "match": "func"
+                    }]
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "patterns": [{
+                        "name": "entity.name.function.ys",
+                        "match": "\\w*"
+                    }]
+                }
+            }
+        },
+        "functionVars": {
+            "begin": "(\\(|,)\\s*",
+            "end": "(\\w)*",
+            "endCaptures": {
+                "0": {
+                    "patterns": [{
+                        "include": "#digits"
+                    }, {
+                        "include": "#variables"
+                    }, {
+                        "name": "variable.other.readwrite.ys",
+                        "match": ".*"
+                    }]
+                }
+            }
+        },
+        "class": {
+            "begin": "\\b((class)\\s*)\\b",
+            "end": "\\b(\\w*)\\b",
+            "beginCaptures": {
+                "0": {
+                    "patterns": [{
+                        "match": "class",
+                        "name": "keyword.control.ys"
+                    }]
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "patterns": [{
+                        "name": "entity.name.type.class.ys",
+                        "match": "\\w*"
+                    }]
+                }
+            }
+        },
+        "inheritance": {
+
+            "begin": "\\b((inherits)\\s*)\\b",
+            "end": "\\b(\\w*)\\b",
+            "beginCaptures": {
+                "0": {
+                    "patterns": [{
+                        "match": "inherits",
+                        "name": "keyword.control.ys"
+                    }]
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "patterns": [{
+                        "name": "entity.name.type.class.parent.ys",
+                        "match": "\\w*"
+                    }]
+                }
+            }
+        },
+        "comments": {
+            "patterns": [{
+                "match": "\\/\\/(.)*",
+                "name": "comment.line.double-slash.vivian"
+            }]
+        },
+        "multiline-comments": {
+            "begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+            "end": "\\*/",
+            "name": "comment.block"
+        }
+    },
+    "scopeName": "source.ys"
+}

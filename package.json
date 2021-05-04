@@ -1,0 +1,28 @@
+{
+    "name": "yeffscript",
+    "displayName": "YeffScript",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "repository": {
+        "url": "https://github.com/Oseryx/Yeffscript-LS"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ys",
+            "aliases": ["YeffScript", "ys"],
+            "extensions": [".neo"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ys",
+            "scopeName": "source.ys",
+            "path": "./syntaxes/ys.tmLanguage.json"
+        }]
+    }
+}
