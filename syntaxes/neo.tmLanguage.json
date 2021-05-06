@@ -175,12 +175,12 @@
         },
         "inheritance": {
 
-            "begin": "\\b((inherits)\\s*)\\b",
+            "begin": "\\b((derives)\\s*)\\b",
             "end": "\\b(\\w*)\\b",
             "beginCaptures": {
                 "0": {
                     "patterns": [{
-                        "match": "inherits",
+                        "match": "derives",
                         "name": "keyword.control.neo"
                     }]
                 }
